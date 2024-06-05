@@ -1,0 +1,49 @@
+.portfolio-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.portfolio-filter button {
+    background: #eee;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.portfolio-filter button.active {
+    background: #0073aa;
+    color: #fff;
+}
+
+.portfolio-sort label {
+    margin-right: 10px;
+}
+
+.portfolio-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.portfolio-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+.portfolio-thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+.portfolio-title {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.portfolio-content {
+    font-size: 1em;
+}
