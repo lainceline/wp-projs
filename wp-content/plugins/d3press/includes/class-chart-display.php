@@ -7,8 +7,11 @@ class Chart_Display {
 
     public function enqueue_scripts() {
         wp_enqueue_style( 'adv-dv-style', plugins_url( '../css/style.css', __FILE__ ) );
+        wp_enqueue_script( 'react', 'https://unpkg.com/react@17/umd/react.production.min.js', array(), null, true );
+        wp_enqueue_script( 'react-dom', 'https://unpkg.com/react-dom@17/umd/react-dom.production.min.js', array(), null, true );
         wp_enqueue_script( 'd3-js', 'https://d3js.org/d3.v6.min.js', array(), null, true );
-        wp_enqueue_script( 'adv-dv-scripts', plugins_url( '../js/scripts.js', __FILE__ ), array( 'd3-js' ), null, true );
+        wp_enqueue_script( 'adv-dv-scripts', plugins_url( '../js/scripts.js', __FILE__ ), array( 'react', 'react-dom', 'd3-js' ), null, true );
+        wp_enqueue_script( 'adv-dv-app', plugins_url( '../js/app.jsx', __FILE__ ), array( 'react', 'react-dom', 'd3-js' ), null, true );
         wp_localize_script( 'adv-dv-scripts', 'adv_dv_data', array(
             'csv_data' => get_option( 'adv_dv_csv_data' ),
         ));
